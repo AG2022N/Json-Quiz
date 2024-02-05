@@ -6,13 +6,13 @@
         {
             string Filepath = (@"Questions/Question" + i + ".json");
             JsonToObject(Filepath);
-            //Console.WriteLine(q.Question);
-            //string UserAnswer = Console.ReadLine();
-            //if (UserAnswer == q.CorrectAnswer)
-            //{
-            //    Console.WriteLine("Correct!");
-            //}
-            //Console.WriteLine(q.CorrectAnswerExplanation)
+            Console.WriteLine("q.Question");
+            string UserAnswer = Console.ReadLine();
+            if (UserAnswer == "q.CorrectAnswer")
+            {
+                Console.WriteLine("Correct!");
+            }
+            Console.WriteLine("q.CorrectAnswerExplanation");
             Console.ReadKey();
             Console.Clear();
             i++;
