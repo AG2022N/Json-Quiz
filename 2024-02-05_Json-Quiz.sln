@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2024-02-05_Json-Quiz", "2024-02-05_Json-Quiz\2024-02-05_Json-Quiz.csproj", "{912F972E-4903-4019-A0AD-56A1F331467C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{912F972E-4903-4019-A0AD-56A1F331467C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{912F972E-4903-4019-A0AD-56A1F331467C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{912F972E-4903-4019-A0AD-56A1F331467C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{912F972E-4903-4019-A0AD-56A1F331467C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A2B3885-F3CD-41DF-A373-1C101F134AFF}
+	EndGlobalSection
+EndGlobal
