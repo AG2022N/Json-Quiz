@@ -2,18 +2,17 @@
 {
     static void Main()
     {
-        for (int i = 1; i < 5;)
+        for (int i = 1; i <= 5;)
         {
-            string filePath = (@"Questions/Question1.json");
-            //string filePath = (@"Questions/Question{0}.json", i.ToString());
-            Convert_json_to_object(filePath);
-            //Console.WriteLine(q.question);
-            //string userAnswer = Console.ReadLine();
-            //if (userAnswer == q.correctAnswer)
+            string Filepath = (@"Questions/Question" + i + ".json");
+            JsonToObject(Filepath);
+            //Console.WriteLine(q.Question);
+            //string UserAnswer = Console.ReadLine();
+            //if (UserAnswer == q.CorrectAnswer)
             //{
             //    Console.WriteLine("Correct!");
             //}
-            //console.writeline(q.correctAnswerExplanation)
+            //Console.WriteLine(q.CorrectAnswerExplanation)
             Console.ReadKey();
             Console.Clear();
             i++;
@@ -21,14 +20,14 @@
     }
     public class QuizQuestion()
     {
-        public string question { get; set; }
-        public string correctAnswer { get; set; }
-        public string correctAnswerExplanation { get; set; }
+        public string Question { get; set; }
+        public string CorrectAnswer { get; set; }
+        public string CorrectAnswerExplanation { get; set; }
     }
-    static void Convert_json_to_object(string filePath)
+    static void JsonToObject(string Filepath)
     {
-        string path = filePath;
-        string convertStorage = File.ReadAllText(path);
-        QuizQuestion q = Newtonsoft.Json.JsonConvert.DeserializeObject<QuizQuestion>(convertStorage);
+        string Path = Filepath;
+        string ConvertStorage = File.ReadAllText(Path);
+        QuizQuestion q = Newtonsoft.Json.JsonConvert.DeserializeObject<QuizQuestion>(ConvertStorage);
     }
 }
