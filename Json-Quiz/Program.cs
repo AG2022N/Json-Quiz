@@ -4,12 +4,10 @@
     {
         for (int i = 1; i <= 6;)
         {
-            string Filepath = (@"Questions/Question" + i + ".json");
-            string ConvertStorage = File.ReadAllText(Filepath);
-            QuizQuestion CurrentQuestion = Newtonsoft.Json.JsonConvert.DeserializeObject<QuizQuestion>(ConvertStorage);
-            Console.WriteLine(CurrentQuestion.Question);
-            Console.WriteLine(CurrentQuestion.AnswerOptions);
-            Console.Write("\nIndtast: ");
+            string ReadJson = File.ReadAllText(@"Questions/Question" + i + ".json");
+            QuizQuestion CurrentQuestion = Newtonsoft.Json.JsonConvert.DeserializeObject<QuizQuestion>(ReadJson);
+            Console.WriteLine(CurrentQuestion.Question + " \n" + CurrentQuestion.AnswerOptions);
+            Console.Write("\nVælg: ");
             string UserAnswer = Console.ReadLine();
             if (UserAnswer == CurrentQuestion.CorrectAnswer)
             {
