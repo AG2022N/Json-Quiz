@@ -5,14 +5,14 @@
         for (int i = 1; i <= 5;)
         {
             string Filepath = (@"Questions/Question" + i + ".json");
-            JsonToObject(Filepath);
-            Console.WriteLine("q.Question");
+            QuizQuestion CurrentQuestion = new QuizQuestion();
+            Console.WriteLine(CurrentQuestion.Question);
             string UserAnswer = Console.ReadLine();
-            if (UserAnswer == "q.CorrectAnswer")
+            if (UserAnswer == CurrentQuestion.CorrectAnswer)
             {
                 Console.WriteLine("Correct!");
             }
-            Console.WriteLine("q.CorrectAnswerExplanation");
+            Console.WriteLine(CurrentQuestion.CorrectAnswerExplanation);
             Console.ReadKey();
             Console.Clear();
             i++;
