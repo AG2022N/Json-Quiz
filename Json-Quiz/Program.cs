@@ -2,16 +2,19 @@
 {
     static void Main()
     {
-        for (int i = 1; i <= 6;)
+        string Filepath = (@"Questions");
+        DirectoryInfo d = new DirectoryInfo(Filepath);
+        FileInfo[] f = d.GetFiles("*", SearchOption.TopDirectoryOnly);
+        for (int i = 1; i <= f.Length;)
         {
-            string ReadJson = File.ReadAllText(@"Questions/Question" + i + ".json");
+            string ReadJson = File.ReadAllText(Filepath + "/Question" + i + ".json");
             QuizQuestion CurrentQuestion = Newtonsoft.Json.JsonConvert.DeserializeObject<QuizQuestion>(ReadJson);
             Console.WriteLine(CurrentQuestion.Question + " \n" + CurrentQuestion.AnswerOptions);
-            Console.Write("\nVælg: ");
+            Console.Write("\n" + CurrentQuestion.AnswerPrompt);
             string UserAnswer = Console.ReadLine();
-            if (UserAnswer == CurrentQuestion.CorrectAnswer)
+            if (UserAnswer == CurrentQuestion.CorrectAnswer) 
             {
-                Console.WriteLine("Korrekt!");
+                Console.WriteLine(CurrentQuestion.CorrectAnswerCongratulation);
             }
             Console.Write(CurrentQuestion.CorrectAnswerExplanation);
             Console.ReadKey();
@@ -23,7 +26,9 @@
     {
         public string Question { get; set; }
         public string AnswerOptions { get; set; }
+        public string AnswerPrompt { get; set; }
         public string CorrectAnswer { get; set; }
+        public string CorrectAnswerCongratulation { get; set; }
         public string CorrectAnswerExplanation { get; set; }
     }
 }
