@@ -4,21 +4,19 @@
     {
         string Filepath = (@"Questions");
         DirectoryInfo Directory = new DirectoryInfo(Filepath);
-        FileInfo[] FileSearch = Directory.GetFiles("*", SearchOption.TopDirectoryOnly);
+        FileInfo[] FileSearch = Directory.GetFiles("*", SearchOption.TopDirectoryOnly); //Could be more specific, count only .json files
         for (int i = 1; i <= FileSearch.Length;)
         {
             string ReadJson = File.ReadAllText(Filepath + "/Question" + i + ".json");
             QuizQuestion CurrentQuestion = Newtonsoft.Json.JsonConvert.DeserializeObject<QuizQuestion>(ReadJson);
-            Console.WriteLine(CurrentQuestion.Question + " \n" + CurrentQuestion.AnswerOptions);
-            Console.Write("\n" + CurrentQuestion.AnswerPrompt);
-            string UserAnswer = Console.ReadLine();
+            Console.Write(CurrentQuestion.Question + CurrentQuestion.AnswerOptions + CurrentQuestion.AnswerPrompt);
+            string UserAnswer = Console.ReadLine(); Console.Write("\n");
             if (UserAnswer == CurrentQuestion.CorrectAnswer) 
-            {
-                Console.WriteLine(CurrentQuestion.CorrectAnswerCongratulation);
+            { 
+                Console.WriteLine(CurrentQuestion.CorrectAnswerCongratulation); 
             }
             Console.Write(CurrentQuestion.CorrectAnswerExplanation);
-            Console.ReadKey();
-            Console.WriteLine("\n");
+            Console.ReadKey(); Console.WriteLine("\n");
             i++;
         }
     }
