@@ -3,9 +3,9 @@
     static void Main()
     {
         string Filepath = (@"Questions");
-        DirectoryInfo d = new DirectoryInfo(Filepath);
-        FileInfo[] f = d.GetFiles("*", SearchOption.TopDirectoryOnly);
-        for (int i = 1; i <= f.Length;)
+        DirectoryInfo Directory = new DirectoryInfo(Filepath);
+        FileInfo[] FileSearch = Directory.GetFiles("*", SearchOption.TopDirectoryOnly);
+        for (int i = 1; i <= FileSearch.Length;)
         {
             string ReadJson = File.ReadAllText(Filepath + "/Question" + i + ".json");
             QuizQuestion CurrentQuestion = Newtonsoft.Json.JsonConvert.DeserializeObject<QuizQuestion>(ReadJson);
