@@ -4,7 +4,7 @@
     {
         string Filepath = (@"Questions");
         DirectoryInfo Directory = new DirectoryInfo(Filepath);
-        FileInfo[] FileSearch = Directory.GetFiles("*", SearchOption.TopDirectoryOnly); //Could be more specific, count only .json files
+        FileInfo[] FileSearch = Directory.GetFiles("*", SearchOption.TopDirectoryOnly); //Could be more specific, i.e count only .json files
         for (int i = 1; i <= FileSearch.Length;)
         {
             string ReadJson = File.ReadAllText(Filepath + "/Question" + i + ".json");
