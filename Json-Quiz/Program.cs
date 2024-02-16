@@ -4,7 +4,7 @@
     {
         string Filepath = (@"Questions");
         DirectoryInfo Directory = new DirectoryInfo(Filepath);
-        FileInfo[] FileSearch = Directory.GetFiles("*", SearchOption.TopDirectoryOnly); //Could be more specific, i.e count only .json files
+        FileInfo[] FileSearch = Directory.GetFiles("*.json", SearchOption.TopDirectoryOnly);
         for (int i = 1; i <= FileSearch.Length;)
         {
             string ReadJson = File.ReadAllText(Filepath + "/Question" + i + ".json");
@@ -22,11 +22,11 @@
     }
     public class QuizQuestion()
     {
-        public string Question { get; set; }
-        public string AnswerOptions { get; set; }
-        public string AnswerPrompt { get; set; }
-        public string CorrectAnswer { get; set; }
-        public string CorrectAnswerCongratulation { get; set; }
+        public string Question { get; set; } 
+        public string AnswerOptions { get; set; } 
+        public string AnswerPrompt { get; set; } 
+        public string CorrectAnswer { get; set; } 
+        public string CorrectAnswerCongratulation { get; set; } 
         public string CorrectAnswerExplanation { get; set; }
     }
 }
